@@ -307,7 +307,7 @@ async def start(message: types.Message, state: FSMContext):
     if message.text.lower() == '/start':
         sql.execute(f"SELECT user_id FROM users WHERE user_id = '{user_id}'")
         if sql.fetchone() is None:
-            await message.answer('Приветстыую тебя игрок пожалуйста назови мне свое имя...')
+            await message.answer('Приветствую тебя игрок, пожалуйста назови мне свое имя...')
             user_add(user_id=user_id)
             await UserState.imena.set()
         else:
